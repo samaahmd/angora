@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarker</title>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=PT+Sans:wght@400;700&family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/all.min.css">
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <main class="w-75 mx-auto" >
+        <section class="form-container">
+            <div
+              class="container d-flex justify-content-center align-items-center flex-column"
+            >
+              <h1 class="my-5">Bookmarker</h1>
+              <div class="input-container w-100 py-4">
+                <h2 class="fw-lighter text-center mb-5">
+                  <i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites
+                  <i class="fa-solid fa-bookmark"></i>
+                </h2>
+      
+                <form class="d-flex flex-column justify-content-center">
+                  <label for="siteName"
+                    ><i class="fa-solid fa-book-bookmark me-2"></i>Site Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control mb-4"
+                    id="siteName"
+                    placeholder="Bookmark Name"
+                    autocomplete="off"
+                    oninput="validate(siteName,nameRegex)"
+                  />
+                  <label for="siteUrl"
+                    ><i class="fa-solid fa-link me-2"></i>Site URL</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control mb-4"
+                    id="siteUrl"
+                    placeholder="Website URL"
+                    autocomplete="off"
+                    oninput="validate(siteUrl,urlRegex)"
+                  />
+                  <button
+                    class="btn btn-danger m-auto px-5"
+                    type="button"
+                    onclick="addBookmark()"
+                  >
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+          </section>
+      
+          <section class="result-container">
+            <div class="container table-responsive-sm">
+              <table class="table text-center mt-4 bg-light">
+                <thead>
+                  <th>Index</th>
+                  <th>Website Name</th>
+                  <th>Visit</th>
+                  <th>Delete</th>
+                </thead>
+                <tbody id="box"></tbody>
+              </table>
+            </div>
+          </section>
+    </main>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="https://fastly.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
